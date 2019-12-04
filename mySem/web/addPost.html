@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semestrovka</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+</head>
+<body onload="navUpdate()">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Historical</a>
+        </div>
+        <div class="nav navbar-nav navbar-right dropdown">
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="fresh.html">Свежие посты</a></li>
+                <li><a href="best.html">Лучшие посты</a></li>
+            </ul>
+            <div class="nav navbar-nav ">
+                <div class="form-inline">
+                    <form class="search-bar" method="post" action="#">
+                        <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search"
+                               aria-label="Search">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit">Поиск</button>
+                    </form>
+                </div>
+            </div>
+            <div class="nav navbar-nav " style="margin-left: 5px" id="addPostButton">
+                <div class = "form-inline">
+                    <a class="btn btn-success my-2 my-sm-0" href="addPost.html" role="button" >Добавить пост</a>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right" id="not_reg_nav" style="display: block">
+                <li><a href="login.html">Вход</a></li>
+                <li><a href="registration.html">Регистрация</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right dropdown" id="reged_nav" style="display: none">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Марина Всезнайка
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <br><a class="dropdown-item" id="profile_href">Профиль</a><br><hr>
+                    <a class="dropdown-item" href="help.html">Помощь</a><br><hr>
+                    <a class="dropdown-item" href="logout">Выйти</a><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="headerwrap">
+    <div class="container">
+        <div class="col-lg-8 col-lg-offset-2">
+        </div>
+    </div>
+</div>
+
+<div class="container w">
+    <div class="panel panel-default col-lg-8 col-lg-offset-2">
+        <h1>Создание нового поста</h1>
+        <form name="form1" method="post" action="addPost"> Тема поста: <br>
+            <textarea id="header_text" name="header" style="width: 100%;   resize: none;" rows="1">
+            </textarea>
+            <br>
+            Картинка
+
+            <input name="photo" type="file" class="form-control-file" id="exampleFormControlFile1">
+
+            <br>
+       Текст поста: <br>
+            <textarea id="text" name="text" style="width: 100%;    resize: none;" rows="10">
+            </textarea>
+            <br>
+
+            <div>
+                <button id="send"> <!--onclick="var text_area = $('textarea#text').val(); var header = $('textarea#header_text').val();
+            $.ajax({ type:'post', url: '/post.php', data: {'text': text_area, 'header': header}, contentType: 'application/json; charset=utf-8'});"-->
+                    Send
+                </button>
+            </div>
+            <br>
+        </form>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

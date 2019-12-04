@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semestrovka</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+</head>
+<body onload="navUpdate()">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Kittens</a>
+        </div>
+        <div class="nav navbar-nav navbar-right dropdown">
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="fresh.html">Свежие посты</a></li>
+                <li><a href="best.html">Лучшие посты</a></li>
+            </ul>
+            <div class="nav navbar-nav ">
+                <div class="form-inline">
+                    <form class="search-bar" method="post" action="#">
+                        <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search"
+                               aria-label="Search">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit">Поиск</button>
+                    </form>
+                </div>
+            </div>
+            <div class="nav navbar-nav " style="margin-left: 5px" id="addPostButton">
+                <div class = "form-inline">
+                    <a class="btn btn-success my-2 my-sm-0" href="addPost.html" role="button" >Добавить пост</a>
+                </div>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right" id="not_reg_nav" style="display: block">
+                <li><a href="login.html">Вход</a></li>
+                <li><a href="registration.html">Регистрация</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right dropdown" id="reged_nav" style="display: none">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <br><a class="dropdown-item" id="profile_href">Профиль</a><br><hr>
+                    <a class="dropdown-item" href="help.html">Помощь</a><br><hr>
+                    <a class="dropdown-item" href="logout">Выйти</a><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="headerwrap">
+    <div class="container">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h1>Все о котятах</h1>
+        </div>
+    </div>
+</div>
+<div style=" text-align: center">
+    <h1>А вы знали?</h1>
+</div>
+<div class="container w">
+    <div class="row cetered">
+        <br><br>
+        <div class="col-lg-4">
+            <p>Огромные глаза относительно тела развились у кошачьих из-за необходимости охотиться в условиях низкой освещенности. Однако такой размер глаз затрудняет постоянную перефокусировку с близких объектов на дальние и обратно.</p>
+        </div>
+        <div class="col-lg-4">
+            <p>Кошки и моряки дружат очень давно: в течение многих столетий кошек брали в море для борьбы с крысами и как талисман, приносящий удачу.</p>
+        </div>
+        <div class="col-lg-4">
+            <p>Самая «богатая кошка» в мире, пожалуй, знаменитый японский персонаж Hello Kitty, который заработал более 1 миллиарда долларов в 2012 году.</p>
+        </div>
+    </div>
+    <br><br>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semestrovka</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/profile.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/style_lk.css">
+
+</head>
+<body onload="navUpdate();dataSet();">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Historical</a>
+        </div>
+        <div class="nav navbar-nav navbar-right dropdown">
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="fresh.html">Свежие посты</a></li>
+                <li><a href="best.html">Лучшие посты</a></li>
+            </ul>
+            <div class="nav navbar-nav ">
+                <div class="form-inline">
+                    <form class="search-bar" method="post" action="#">
+                        <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search"
+                               aria-label="Search">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit">Поиск</button>
+                    </form>
+                </div>
+            </div>
+            <div class="nav navbar-nav " style="margin-left: 5px" id="addPostButton">
+                <div class = "form-inline">
+                    <a class="btn btn-success my-2 my-sm-0" href="addPost.html" role="button" >Добавить пост</a>
+                </div>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right" id="not_reg_nav" style="display: block">
+                <li><a href="login.html">Вход</a></li>
+                <li><a href="registration.html">Регистрация</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right dropdown" id="reged_nav" style="display: none">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Марина Всезнайка
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <br><a class="dropdown-item" id="profile_href">Профиль</a><br>
+                    <hr>
+                    <a class="dropdown-item" href="help.html">Помощь</a><br>
+                    <hr>
+                    <a class="dropdown-item" href="logout">Выйти</a><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container w">
+    <div class="panel panel-default col-lg-12">
+        <br>
+        <div class="username" ><h4><a id = "profile_username">Username</a></h4>
+        </div>
+        <br>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 ">
+            <img src="image/photo_2019-11-06_16-32-55.jpg" style="width: 100%" alt="">
+            <form method="post" id="profile_form_1" style="display: none">
+                <div class="form-group">
+                    <label>Обновить фотографию</label>
+                    <input name="photo" type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+        <div style="right: -50px" class="col-lg-7">
+
+            <div method="post" id="info_div" style="display: none">
+                <div class="form-group">
+                    <label>Дата регистрации</label>
+                    <div id="profile_reg_date_info" class=" ">11.11.1111</div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label>Страна проживания</label>
+                    <div id="profile_country_info" class="">Россия</div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label>Дата рождения</label>
+                    <div id="profile_date_info" class="">16.11.2000</div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label>О себе</label>
+                    <div id="profile_about_info" class=""></div>
+                </div>
+                <hr>
+
+            </div>
+
+            <form method="post" id="profile_form_2" style="display: none">
+                <div class="form-group">
+                    <label>Дата регистрации</label>
+                    <input id="profile_reg_date_input" class="form-control" placeholder="11.11.1111" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Страна проживания</label>
+                    <input id="profile_country_input" name="country" class="form-control" placeholder="Россия">
+                </div>
+                <div class="form-group">
+                    <label>Дата рождения</label>
+                    <input id="profile_date_input" name="date" class="form-control" placeholder="--.--.----">
+                </div>
+                <div class="form-group">
+                    <label>О себе</label>
+                    <textarea id="profile_about_input" name="about" class="form-control" placeholder=""> </textarea>
+                </div>
+                <button type="submit" class="btn btn-primary ">Сохранить</button>
+            </form>
+            <form id="profile_form_3" style="display: none">
+                <div class="form-group">
+                    <label>Изменить пароль</label>
+                    <input id="oldpassword" name="oldpassword" type="password" class="form-control"
+                           style="margin-bottom: 5px" placeholder="Старый пароль">
+                    <input id="newpassword" name="newpassword" type="password" class="form-control"
+                           placeholder="Новый пароль">
+                </div>
+                <button type="submit" class="btn btn-primary">Сменить</button>
+
+            </form>
+        </div>
+        <div style="margin-top: -10px;
+    padding-top: 20px;
+    text-align: center;
+    background-position: center center;
+    min-height: 500px;
+    width: 100%;" id="">
+            <div class="container">
+                <div class="col-lg-7 col-lg-offset-2">
+                    <hr>
+                    <h1>Ваши посты</h1>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default col-lg-8 col-lg-offset-2">
+            <div style="width: 100%; margin-top: 10px">
+                <button style="float:right;" type="button" class="btn btn-default"><span
+                        class="glyphicon glyphicon-remove"></span></button>
+                <button style="float:right;" type="button" class="btn btn-default"><span
+                        class="glyphicon glyphicon-pencil"></span></button>
+            </div>
+            <h4>Кошачница</h4>
+            <hr>
+            <h4>Тема</h4>
+            <hr>
+            <a style="color: #7b7b7b" href="contacts.html">
+                <p>Кошка практически никогда не мяукает другим кошкам, в основном этот звук предназначается людям. Они, как правило, урчат или шипят на других представителей кошачьих.
+                </p>
+            </a>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+            </button>
+
+        </div>
+        <br><br>
+        <div class="panel panel-default col-lg-8 col-lg-offset-2">
+            <div style="width: 100%; margin-top: 10px">
+                <button style="float:right;" type="button" class="btn btn-default"><span
+                        class="glyphicon glyphicon-remove"></span></button>
+                <button style="float:right;" type="button" class="btn btn-default"><span
+                        class="glyphicon glyphicon-pencil"></span></button>
+            </div>
+            <h4>Вася Пупкин</h4>
+            <hr>
+            <h4>Тема</h4>
+            <hr>
+            <a style="color: #7b7b7b" href="contacts.html">
+                <p>Самой долгоживущей кошкой из всех когда-либо зарегистрированных считается Крим Пафф, прожившая 38 лет и 3 дня (1967-2005).
+                </p>
+            </a>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+            </button>
+        </div>
+        <br><br>
+    </div>
+</div>
+
+</body>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>

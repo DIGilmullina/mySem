@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semestrovka</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/postsRender.js"></script>
+    <script src="js/postLike.js"></script>
+    <script src="js/postDelete.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+</head>
+<body onload="navUpdate();postsRender(0);">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Historical</a>
+        </div>
+        <div class="nav navbar-nav navbar-right dropdown">
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="" style="color: white">Свежие посты</a></li>
+                <li><a href="best.html">Лучшие посты</a></li>
+            </ul>
+            <div class="nav navbar-nav ">
+                <div class="form-inline">
+                    <form class="search-bar" method="post" action="#">
+                        <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search"
+                               aria-label="Search">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit">Поиск</button>
+                    </form>
+                </div>
+            </div>
+            <div class="nav navbar-nav " style="margin-left: 5px" id="addPostButton">
+                <div class="form-inline">
+                    <a class="btn btn-success my-2 my-sm-0" href="addPost.html" role="button">Добавить пост</a>
+                </div>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right" id="not_reg_nav" style="display: block">
+                <li><a href="login.html">Вход</a></li>
+                <li><a href="registration.html">Регистрация</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right dropdown" id="reged_nav" style="display: none">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Марина Всезнайка
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <br><a class="dropdown-item" id="profile_href">Профиль</a><br>
+                    <hr>
+                    <a class="dropdown-item" href="help.html">Помощь</a><br>
+                    <hr>
+                    <a class="dropdown-item" href="logout">Выйти</a><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="headerwrap">
+    <div class="container">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h1>Свежие посты</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container w">
+    <div class="panel panel-default col-lg-8 col-lg-offset-2" >
+        <div id="post_containers">
+        <br>
+        <div class="panel panel-default col-lg-8 col-lg-offset-2">
+            <div style="width: 100%; margin-top: 10px">
+                <div style="float:right; padding-right: 10px">
+                    <button type="button" class="btn btn-default"><span
+                            class="glyphicon glyphicon-remove"></span></button>
+                </div>
+                <div style="float:right; padding-right: 10px">
+                    <button type="button" class="btn btn-default"><span
+                            class="glyphicon glyphicon-pencil"></span></button>
+                </div>
+            </div>
+            <a href="profile.html"><h4>Вася Пупкин</h4></a>
+            <hr>
+            <h4>Тема</h4>
+            <hr>
+            <a style="color: #7b7b7b" href="contacts.html"><p>Самой долгоживущей кошкой из всех когда-либо зарегистрированных считается Крим Пафф, прожившая 38 лет и 3 дня (1967-2005).
+            </p>
+            </a>
+            <div>
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                </button>
+            </div>
+            <br>
+        </div>
+        <br>
+        </div>
+        <div class="col-lg-8 col-lg-offset-2">
+            <button class="col-lg-3" id = "button_back">назад</button>
+            <div id = "pageIndicator" class="col-lg-6"></div>
+            <button class="col-lg-3" id = "button_forward">вперед</button>
+        </div>
+        <br>
+    </div>
+</div>
+<div class="modal fade" id="modal_auth">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <H4>Для выполнения действия необходима авторизация&hellip;</H4>
+            </div>
+            <div class="modal-footer">
+                <form action="registration.html" style="float: right"><button class="btn btn-default">Регистрация</button></form>
+                <form action="login.html" style="float: right"><button  class="btn btn-default">Войти</button></form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
